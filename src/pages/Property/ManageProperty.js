@@ -21,7 +21,9 @@ const ManageProperty = () => {
   }, [])
   const rows = data2.map(post => ({
     id: <div key={post.id} > {post.id}</div>,
-    borrowername: <div key={post.id} > {post.borrowername}</div>,
+    image: <div key={post.id} ><img style={{ width: '200px', height: '150px' }} src={post.image} /> </div>,
+    borrowername: <div key={post.id} >{post.borrowername} </div>,
+    updated_at: <div key={post.id} > {post.updated_at}</div>,
   }));
   const data = {
     columns: [
@@ -29,13 +31,25 @@ const ManageProperty = () => {
         label: "ID",
         field: "id",
         sort: "asc",
-        width: 150,
+
+      },
+      {
+        label: "Image",
+        field: "image",
+        sort: "asc",
+        width: 200
       },
       {
         label: "Name",
         field: "borrowername",
         sort: "asc",
-        width: 270,
+
+      },
+      {
+        label: "DateTime",
+        field: "updated_at",
+        sort: "asc",
+
       },
 
     ],
